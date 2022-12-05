@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Persona } from '../Models/persona';
+import { Persona } from '../models/persona';
 import { Observable } from 'rxjs';
 
 @Injectable({

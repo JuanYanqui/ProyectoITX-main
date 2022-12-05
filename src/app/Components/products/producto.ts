@@ -1,6 +1,6 @@
-import { Categoria } from '../../Models/categoria';
-import { Empresa } from '../../Models/Empresa';
-import { Proveedor } from '../../Models/proveedor';
+import { Categoria } from '../../modules/models/categoria';
+import { Empresa } from '../../modules/models/Empresa';
+import { Proveedor } from '../../modules/models/proveedor';
 export interface Producto {
   id?: number;
   nombre: string;

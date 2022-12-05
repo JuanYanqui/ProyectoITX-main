@@ -6,15 +6,15 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { AlertsService } from '@service/alerts';
 
-import { Categoria } from 'src/app/Models/categoria';
-import { Proveedor } from 'src/app/Models/proveedor';
-import { ProveedorService } from 'src/app/Services/proveedor.service';
-import { Empresa } from '../../../Models/Empresa';
-import { CategoriaService } from '../../../Services/categoria.service';
-import { SharedServices } from '../../../Services/shared.service';
-import { UsuarioService } from '../../../Services/usuario.service';
+import { Categoria } from 'src/app/modules/models/categoria';
+import { Proveedor } from 'src/app/modules/models/proveedor';
+import { AlertsService } from 'src/app/modules/services/alerts/alerts.service';
+import { ProveedorService } from 'src/app/modules/services/proveedor.service';
+import { Empresa } from '../../../modules/models/Empresa';
+import { CategoriaService } from '../../../modules/services/categoria.service';
+import { SharedServices } from '../../../modules/services/shared.service';
+import { UsuarioService } from '../../../modules/services/usuario.service';
 import { Producto } from '../producto';
 import { ProductosService } from '../productos.service';
 export interface IHash {
@@ -27,7 +27,7 @@ export interface IHash {
 })
 export class AddProductComponent implements OnInit {
   @Input() member: any = '';
-  constructor (
+  constructor(
     private categoriaServices: CategoriaService,
     private proveedorService: ProveedorService,
     private productoService: ProductosService,
@@ -37,7 +37,7 @@ export class AddProductComponent implements OnInit {
     private formbuilder3: FormBuilder,
     private formbuilder: FormBuilder,
     private alert: AlertsService
-  ) {}
+  ) { }
 
   alphanumericPattern = '^(?! )^[A-Za-z0-9 ]+$';
   numbersPattern = '^[0-9]+([.][0-9]+)?$';

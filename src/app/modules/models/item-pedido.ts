@@ -1,9 +1,10 @@
-import { Producto } from "../Components/products/producto";
+
+import { Producto } from "src/app/Components/products/producto";
 import { Pedido } from "./pedido";
 
-export class ItemPedido{
+export class ItemPedido {
     idItemPedido?: number;
-    
+
     cantidad?: number;
     precio?: number;
     subtotal?: number;

@@ -14,7 +14,7 @@ import { ListaProveedoresComponent } from './Components/proveedores/lista-provee
 import { ProveedoresComponent } from './Components/proveedores/proveedores.component';
 import { FormPublicUserComponent } from './Components/Usuarios/form-public-user/form-public-user.component';
 import { LoginUsuariosComponent } from './Components/Usuarios/login-usuarios/login-usuarios.component';
-import { VigilanteClientAdminGuard } from './Services/guard/vigilante-client-admin.guard';
+import { VigilanteClientAdminGuard } from './modules/services/guard/vigilante-client-admin.guard';
 import { CatalogoProductosComponent } from './Components/catalogo-productos/catalogo-productos.component';
 import { ConfiguracionesComponent } from './Components/configuraciones/configuraciones.component';
 import { PedidoComponent } from './Components/pedido/pedido.component';

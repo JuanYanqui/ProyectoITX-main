@@ -5,10 +5,10 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AlertsService } from '@service/alerts';
-import { SpinnerService } from '@service/spinners';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { AlertsService } from '../alerts/alerts.service';
+import { SpinnerService } from '../spinner/spinner.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +17,7 @@ export class InterceptorService implements HttpInterceptor {
   constructor(
     private SpinnerService: SpinnerService,
     private alertserv: AlertsService
-  ) {}
+  ) { }
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler

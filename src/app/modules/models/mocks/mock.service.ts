@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Proveedor } from 'src/app/Models/mocks/proveedor';
+import { Proveedor } from 'src/app/modules/models/mocks/proveedor';
 import { Categoria } from './categoria';
 import { CATEGORIAS } from './mock-categorias';
 import { PROVEEDORES } from './mock-proveedor';

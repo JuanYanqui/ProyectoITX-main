@@ -4,11 +4,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { element } from 'protractor';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { Empresa } from 'src/app/Models/Empresa';
-import { PersonalCargo } from 'src/app/Models/personal-cargo';
-import { PersonalCargoService } from 'src/app/Services/personal-cargo.service';
-import { UsuarioService } from 'src/app/Services/usuario.service';
-import { AlertsService } from '../../../Services/alerts/alerts.service';
+import { Empresa } from 'src/app/modules/models/Empresa';
+import { PersonalCargo } from 'src/app/modules/Models/personal-cargo';
+import { PersonalCargoService } from 'src/app/modules/services/personal-cargo.service';
+import { UsuarioService } from 'src/app/modules/services/usuario.service';
+import { AlertsService } from '../../../modules/services/alerts/alerts.service';
 import { Bodega } from '../bodega';
 import { BodegasService } from '../bodegas.service';
 

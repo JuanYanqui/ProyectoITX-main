@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Empresa } from 'src/app/Models/Empresa';
-import { PersonalCargoService } from 'src/app/Services/personal-cargo.service';
-import { SharedServices } from 'src/app/Services/shared.service';
-import { UsuarioService } from 'src/app/Services/usuario.service';
-import { PersonalCargo } from '../../../Models/personal-cargo';
-import { AlertsService } from '../../../Services/alerts/alerts.service';
+import { Empresa } from 'src/app/modules/models/Empresa';
+import { PersonalCargoService } from 'src/app/modules/services/personal-cargo.service';
+import { SharedServices } from 'src/app/modules/services/shared.service';
+import { UsuarioService } from 'src/app/modules/services/usuario.service';
+import { PersonalCargo } from '../../../modules/Models/personal-cargo';
+import { AlertsService } from '../../../modules/services/alerts/alerts.service';
 import { Bodega } from '../bodega';
 import { BodegasService } from '../bodegas.service';
 

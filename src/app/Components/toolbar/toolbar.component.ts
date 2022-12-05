@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { PersonalCargoService } from 'src/app/Services/personal-cargo.service';
-import { UsuarioService } from 'src/app/Services/usuario.service';
+import { PersonalCargoService } from 'src/app/modules/services/personal-cargo.service';
+import { UsuarioService } from 'src/app/modules/services/usuario.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { UsuarioService } from 'src/app/Services/usuario.service';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css'],
 })
-export class ToolbarComponent implements OnInit, OnDestroy{
+export class ToolbarComponent implements OnInit, OnDestroy {
 
   items: MenuItem[] | any;
   idUsuario: any;
@@ -24,7 +24,7 @@ export class ToolbarComponent implements OnInit, OnDestroy{
   isGerente: boolean = false;
   isBodega: boolean = false;
   isVenta: boolean = false;
-  displayMaximizable:any;
+  displayMaximizable: any;
   isLogin: boolean = false;
 
 
@@ -32,14 +32,14 @@ export class ToolbarComponent implements OnInit, OnDestroy{
     private personalCargoService: PersonalCargoService,
     private usuarioService: UsuarioService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.obtenerUsuario();
-    }
-    ngOnDestroy() {
-        console.log("as");
-    }
+  }
+  ngOnDestroy() {
+    console.log("as");
+  }
 
   obtenerUsuario() {
     this.idUsuario = localStorage.getItem('idUsuario');
@@ -90,20 +90,20 @@ export class ToolbarComponent implements OnInit, OnDestroy{
     }
   }
 
-  verificarCargosClientAdmin(idUsuario: any){
+  verificarCargosClientAdmin(idUsuario: any) {
     console.log('Comprobando los cargos del usuario ...')
     this.personalCargoService.getByUsuario(idUsuario).subscribe(
       data => {
-        if (data!=null && data.length > 0){
+        if (data != null && data.length > 0) {
           this.isGerente = false;
           data.forEach(personal => {
-            if (personal.cargo?.nombre === 'Bodega'){
+            if (personal.cargo?.nombre === 'Bodega') {
               this.isBodega = true;
-            }else if(personal.cargo?.nombre === 'Venta'){
+            } else if (personal.cargo?.nombre === 'Venta') {
               this.isVenta = true;
             }
           });
-        }else{
+        } else {
           this.isGerente = true;
           this.isBodega = true;
           this.isVenta = true;
@@ -115,34 +115,34 @@ export class ToolbarComponent implements OnInit, OnDestroy{
   iniciarSesion() {
     //   location.replace('/log-in');
 
-                this.router
-                  .navigateByUrl('/', { skipLocationChange: true })
-                  .then(() => {
-  this.router.navigate(['log-in']);
-                  });
+    this.router
+      .navigateByUrl('/', { skipLocationChange: true })
+      .then(() => {
+        this.router.navigate(['log-in']);
+      });
   }
 
   registrarse() {
     //   location.replace('/add-public-prolife');
 
-                this.router
-                  .navigateByUrl('/', { skipLocationChange: true })
-                  .then(() => {
-                    this.router.navigate(['add-public-prolife']);
-                  });
+    this.router
+      .navigateByUrl('/', { skipLocationChange: true })
+      .then(() => {
+        this.router.navigate(['add-public-prolife']);
+      });
   }
 
   cerrarSesion() {
     sessionStorage.removeItem('productosPedido');
     localStorage.removeItem('idUsuario');
     location.replace('/log-in');
-                      // this.router
-                      //   .navigateByUrl('/', { skipLocationChange: true })
-                      //   .then(() => {
-                      //     this.router.navigate(['log-in']);
-                      //   });
+    // this.router
+    //   .navigateByUrl('/', { skipLocationChange: true })
+    //   .then(() => {
+    //     this.router.navigate(['log-in']);
+    //   });
   }
   showMaximizableDialog() {
     this.displayMaximizable = true;
-}
+  }
 }
