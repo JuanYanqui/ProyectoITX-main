@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
 import { CatalogoComponent } from './Components/catalogo/catalogo.component';
 import { ClienteComponent } from './Components/cliente/cliente.component';
 import { EditarClientesComponent } from './Components/cliente/editar-clientes/editar-clientes.component';
@@ -22,6 +20,7 @@ import { GestionPedidosComponent } from './Components/gestion-pedidos/gestion-pe
 import { ClientPedidosComponent } from './Components/client-pedidos/client-pedidos.component';
 import { ReportesComponent } from './Components/reportes/reportes.component';
 import { VentaClienteComponent } from './Components/venta-cliente/venta-cliente.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
