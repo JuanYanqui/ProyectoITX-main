@@ -22,7 +22,6 @@ import { ReportesComponent } from './Components/reportes/reportes.component';
 import { VentaClienteComponent } from './Components/venta-cliente/venta-cliente.component';
 import { RouterModule, Routes } from '@angular/router';
 
-
 const routes: Routes = [
   { path: 'add-public-prolife', component: FormPublicUserComponent },
   { path: 'log-in', component: LoginUsuariosComponent, data: { preload: true } },

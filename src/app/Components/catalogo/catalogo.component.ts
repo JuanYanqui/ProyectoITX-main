@@ -18,7 +18,7 @@ export class CatalogoComponent implements OnInit {
   listaProductos!: Producto[];
   nombreEmpresa: string = '';
 
-  constructor(private productoService: ProductosService, private empresaService: EmpresaService, private router: Router) { }
+  constructor(private productoService: ProductosService, private empresaService: EmpresaService) { }
 
   ngOnInit(): void {
     this.responsiveOptions = [
