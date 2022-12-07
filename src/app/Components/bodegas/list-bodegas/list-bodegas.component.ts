@@ -23,7 +23,6 @@ export class ListBodegasComponent implements OnInit {
   constructor(
     private usuariosService: UsuarioService,
     private toastr: ToastrService,
-    private router: Router,
     private bodegasService: BodegasService
   ) {}
 

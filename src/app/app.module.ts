@@ -82,7 +82,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
     VentaClienteComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CommonModule,
     AppRoutingModule,
     FormsModule,

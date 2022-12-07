@@ -25,7 +25,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'add-public-prolife', component: FormPublicUserComponent },
-  { path: 'log-in', component: LoginUsuariosComponent,data: { preload: true }},
+  { path: 'log-in', component: LoginUsuariosComponent, data: { preload: true } },
 
   { path: 'cliente', component: ClienteComponent },
   { path: 'lista-clientes', component: ListaClientesComponent },
@@ -51,9 +51,11 @@ const routes: Routes = [
     //canActivate: [VigilanteClientAdminGuard],
     component: ReportesComponent,
   },
-  { path: 'configuraciones',
-  canActivate: [VigilanteClientAdminGuard],
-  component:ConfiguracionesComponent},
+  {
+    path: 'configuraciones',
+    canActivate: [VigilanteClientAdminGuard],
+    component: ConfiguracionesComponent
+  },
   { path: 'catalogo', component: CatalogoComponent },
   { path: 'personal', component: PersonalComponent },
   { path: 'editar-proveedor', component: EditarProveedorComponent },
@@ -115,11 +117,11 @@ const routes: Routes = [
     data: { preload: false },
   },
   { path: 'home', component: HomeComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'home'},
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

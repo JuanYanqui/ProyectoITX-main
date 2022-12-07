@@ -15,7 +15,7 @@ export class SharedServices {
   private url = environment.baseUrl;
   private status = new BehaviorSubject<any[]>([
     { style: 'color:#8A5340; background-color: #FEEDAF;', name: 'Pendiente' },
-    { style: 'color:#C63737; background-color: #FFCDD2;', name: 'Rechazado'},
+    { style: 'color:#C63737; background-color: #FFCDD2;', name: 'Rechazado' },
     { style: 'color:#694382; background-color: #ECCFFF; ', name: 'Recibido' },
     { style: 'color:#23547B; background-color: #B3E5FC;', name: 'En control' },
     { style: 'color:#256029; background-color: #C8E6C9;', name: 'Aceptado' },
@@ -30,8 +30,8 @@ export class SharedServices {
   status$ = this.status.asObservable();
 
 
-  constructor (private http: HttpClient) {
-   }
+  constructor(private http: HttpClient) {
+  }
 
   addimage(file: File, folder: string): Observable<any> {
     const formData: FormData = new FormData();
@@ -47,13 +47,13 @@ export class SharedServices {
     const reader = new FileReader();
     reader.readAsDataURL(file);
 
-    return Observable.create((observer:any) => {
+    return Observable.create((observer: any) => {
       reader.onload = (ev) => {
         const img = this.createImage(ev);
         const imgWH = img.width > img.height ? img.width : img.height;
         let withHeightRatio = imgWH > widthHeightMax
-            ? widthHeightMax / imgWH
-            : defaultWidthHeightRatio;
+          ? widthHeightMax / imgWH
+          : defaultWidthHeightRatio;
         let qualityRatio =
           file.size > fileSizeMax
             ? fileSizeMax / file.size
@@ -65,7 +65,7 @@ export class SharedServices {
           const ctx = <CanvasRenderingContext2D>elem.getContext('2d');
           ctx.drawImage(img, 0, 0, elem.width, elem.height);
           ctx.canvas.toBlob(
-            (blob:any) => {
+            (blob: any) => {
               observer.next(
                 new File([blob], file.name, {
                   type: imageType,
@@ -82,7 +82,7 @@ export class SharedServices {
     });
   }
 
-  private createImage(ev:any) {
+  private createImage(ev: any) {
     let imageContent = ev.target.result;
     const img = new Image();
     img.src = imageContent;
