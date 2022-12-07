@@ -13,7 +13,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'agregar',
-        pathMatch: 'compras',
+        //pathMatch: 'compras',
       },
       {
         path: 'listar',

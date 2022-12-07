@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { VigilanteClientAdminGuard } from 'src/app/modules/services/guard/vigilante-client-admin.guard';
 import { AddBodegaComponent } from './add-bodega/add-bodega.component';
 import { BodegaComponent } from './bodega/bodega.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'agregar',
-        pathMatch: 'bodegas',
+        //pathMatch: 'bodegas',
       },
       {
         path: 'listar',

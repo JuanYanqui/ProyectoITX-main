@@ -12,7 +12,7 @@ const routes: Routes = [ {
     {
       path: '',
       redirectTo: 'gestion',
-      pathMatch: 'empresas',
+      //pathMatch: 'empresas',
     },
     {
       path: 'gestion',

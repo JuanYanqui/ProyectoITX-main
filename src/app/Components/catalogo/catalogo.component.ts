@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Empresa } from 'src/app/modules/models/Empresa';
@@ -18,7 +19,7 @@ export class CatalogoComponent implements OnInit {
   listaProductos!: Producto[];
   nombreEmpresa: string = '';
 
-  constructor(private productoService: ProductosService, private empresaService: EmpresaService) { }
+  constructor(private productoService: ProductosService, private empresaService: EmpresaService, private router: Router) { }
 
   ngOnInit(): void {
     this.responsiveOptions = [
@@ -44,7 +45,7 @@ export class CatalogoComponent implements OnInit {
 
   obtenerEmpresas() {
     this.empresaService.getEmpresas().subscribe(
-      data => {
+      (data) => {
         this.listaEmpresas = data.map(
           result => {
             let empresa = new Empresa;
@@ -80,7 +81,7 @@ export class CatalogoComponent implements OnInit {
 
     this.nombreEmpresa = empresa.nombre;
     this.productoService.getProductsByEmpresa(empresa.idEmpresa).subscribe(
-      data => {
+      (data) => {
         this.listaProductos = data;
       }
     )
