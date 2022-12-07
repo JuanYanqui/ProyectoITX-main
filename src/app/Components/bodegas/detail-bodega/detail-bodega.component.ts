@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { element } from 'protractor';
 import { Observable } from 'rxjs';
@@ -20,13 +20,13 @@ import { BodegasService } from '../bodegas.service';
 export class DetailBodegaComponent implements OnInit {
 
   constructor (
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private route: ActivatedRoute,
     private bodegaService: BodegasService, private usuarioService: UsuarioService,
     private alertService: AlertsService, private personalCargoService: PersonalCargoService,
   ) {}
 
-  bodegaForm!: FormGroup;
+  bodegaForm!: UntypedFormGroup;
   validPattern = '^(?! )^[A-Za-z0-9 ]+$';
   validNumberPatern = '^[0-9]+([.|,][0-9]+)?$';
   bodega = {} as Bodega;

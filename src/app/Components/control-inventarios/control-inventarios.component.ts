@@ -14,7 +14,7 @@ import { Empresa } from 'src/app/modules/models/Empresa';
 import { PersonalCargo } from 'src/app/modules/Models/personal-cargo';
 import { ControlInventariosService } from './control-inventarios.service';
 import { ControlInventarios } from './control-inventarios';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AlertsService } from 'src/app/modules/services/alerts/alerts.service';
 
 @Component({
@@ -24,7 +24,7 @@ import { AlertsService } from 'src/app/modules/services/alerts/alerts.service';
 	providers: [ComprasService],
 })
 export class ControlInventariosComponent implements OnInit {
-	controlForm!: FormGroup;
+	controlForm!: UntypedFormGroup;
 
 	constructor(private personalCargoService: PersonalCargoService,
 		private compras_service: ComprasService,

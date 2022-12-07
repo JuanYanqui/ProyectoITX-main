@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  FormGroup,
+  UntypedFormArray,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 
@@ -33,9 +33,9 @@ export class AddProductComponent implements OnInit {
     private productoService: ProductosService,
     private sharedServices: SharedServices,
     private usuarioService: UsuarioService,
-    private formbuilder2: FormBuilder,
-    private formbuilder3: FormBuilder,
-    private formbuilder: FormBuilder,
+    private formbuilder2: UntypedFormBuilder,
+    private formbuilder3: UntypedFormBuilder,
+    private formbuilder: UntypedFormBuilder,
     private alert: AlertsService
   ) { }
 
@@ -51,13 +51,13 @@ export class AddProductComponent implements OnInit {
   proveedores$!: Proveedor[];
   categorias$!: Categoria[];
   loading: boolean = false;
-  productoForm!: FormGroup;
+  productoForm!: UntypedFormGroup;
   empresa = new Empresa();
   selectedPrice: any = [];
   selectedUnidad: any = [];
   showMe: boolean = false;
-  priceForm!: FormGroup;
-  unidadesForm!: FormGroup;
+  priceForm!: UntypedFormGroup;
+  unidadesForm!: UntypedFormGroup;
   precios: any[] = [];
   producto!: Producto;
   public data: any;
@@ -234,7 +234,7 @@ export class AddProductComponent implements OnInit {
 
   //* Agregar precios de venta //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   get pricesDetails(): any {
-    return this.priceForm.get('pricesDetails') as FormArray;
+    return this.priceForm.get('pricesDetails') as UntypedFormArray;
   }
 
   onAdad() {
@@ -265,12 +265,12 @@ export class AddProductComponent implements OnInit {
   }
 
   public addControls() {
-    return new FormGroup({
-      precio: new FormControl('', [
+    return new UntypedFormGroup({
+      precio: new UntypedFormControl('', [
         Validators.required,
         Validators.pattern(this.lettersPattern),
       ]),
-      valor: new FormControl('', [
+      valor: new UntypedFormControl('', [
         Validators.pattern(this.numbersPattern),
         Validators.required, Validators.maxLength(4)
       ]),
@@ -294,7 +294,7 @@ export class AddProductComponent implements OnInit {
   //? Agregar unidades con equivalencias////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   get unidadesDetails(): any {
-    return this.unidadesForm.get('unidadesDetails') as FormArray;
+    return this.unidadesForm.get('unidadesDetails') as UntypedFormArray;
   }
 
   onAdad2(valid: boolean, i: any) {
@@ -405,16 +405,16 @@ export class AddProductComponent implements OnInit {
 
     }
 
-    return new FormGroup({
-      nombre: new FormControl('', [
+    return new UntypedFormGroup({
+      nombre: new UntypedFormControl('', [
         Validators.required,
         Validators.pattern(this.alphanumericPattern),
       ]),
-      equivalencia: new FormControl(this.current_equivalencia, [
+      equivalencia: new UntypedFormControl(this.current_equivalencia, [
         Validators.pattern(this.alphanumericPattern),
         Validators.required,
       ]),
-      valor_equivalencia: new FormControl('', [
+      valor_equivalencia: new UntypedFormControl('', [
         Validators.pattern(this.numbersPattern),
         Validators.required, Validators.maxLength(4)
       ]),

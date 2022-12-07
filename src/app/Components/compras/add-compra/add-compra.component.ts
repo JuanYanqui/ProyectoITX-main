@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, NgForm, Validators } from '@angular/forms';
 
 import { Observable, of } from 'rxjs';
 import { finalize } from 'rxjs/operators';
@@ -34,7 +34,7 @@ export class AddCompraComponent implements OnInit, OnDestroy {
 
   validPattern = '^(?! )^[A-Za-z0-9 ]+$';
   validNumberPatern = '^[0-9]+([.|,][0-9]+)?$';
-  compraForm!: FormGroup;
+  compraForm!: UntypedFormGroup;
 
   unidadMedida$!: Observable<UnidadMedida[]>;
   listProducts: Producto[] = [];
@@ -66,7 +66,7 @@ export class AddCompraComponent implements OnInit, OnDestroy {
     private alertService: AlertsService,
     private usuariosService: UsuarioService,
     private compraService: ComprasService,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) { }
 
   @Output() usernameEmitter = new EventEmitter<string>();
