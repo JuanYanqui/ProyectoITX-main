@@ -5,7 +5,7 @@
 <body>
     <p-panel header="Registro Usuario">
 
-        
+
         <div class="container" style=" align-items: center;  ">
             <header>Registro de usuario para acceso a la plataforma de Practicas Preprofesionales</header>
 
@@ -39,8 +39,8 @@
 
                             <div class="input-field">
                                 <label>Contraseña</label>
-                                <input type="password" name="contra" placeholder="Ingrese su numero celular"
-                                    [(ngModel)]="usuario.password" required>
+                                <p-password [toggleMask]="true" id="input" placeholder="Ingrese una Contraseña"
+                                    class={{verfPassword}} [(ngModel)]="usuario.password" required></p-password>
                             </div>
                         </div>
                     </div>
