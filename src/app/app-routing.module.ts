@@ -21,6 +21,7 @@ import { ClientPedidosComponent } from './Components/client-pedidos/client-pedid
 import { ReportesComponent } from './Components/reportes/reportes.component';
 import { VentaClienteComponent } from './Components/venta-cliente/venta-cliente.component';
 import { RouterModule, Routes } from '@angular/router';
+import { WelcomeHomeComponent } from './Modules1/home/welcome-home/welcome-home.component';
 
 const routes: Routes = [
   { path: 'add-public-prolife', component: FormPublicUserComponent },
@@ -115,9 +116,23 @@ const routes: Routes = [
       ),
     data: { preload: false },
   },
-  { path: 'home', component: HomeComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+ 
+
+
+
+
+
+// nuevo proyecto trabajado desde aqui 
+
+{
+  path: 'Homepage',
+  component: WelcomeHomeComponent,
+  loadChildren: () => import('./Modules1/home/home.module').then(m => m.HomeModule) // se importa un modulo que tiene routing es decir ruta 
+   
+}
+
+
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
