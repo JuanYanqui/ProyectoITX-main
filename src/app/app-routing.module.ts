@@ -116,11 +116,6 @@ const routes: Routes = [
       ),
     data: { preload: false },
   },
- 
-
-
-
-
 
 // nuevo proyecto trabajado desde aqui 
 
@@ -130,8 +125,6 @@ const routes: Routes = [
   loadChildren: () => import('./Modules1/home/home.module').then(m => m.HomeModule) // se importa un modulo que tiene routing es decir ruta 
    
 }
-
-
 
 ];
 @NgModule({

@@ -2,55 +2,40 @@
 <header>
 </header>
 
-<body>
-    <p-panel header="Registro Usuario">
+<body class="d-flex h-100 text-center ">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
 
-        <div class="container" style=" align-items: center;  ">
-            <header>Registro de usuario para acceso a la plataforma de Practicas Preprofesionales</header>
+        <div class="container">
+            <div class="card">
+                <div class="top-row background-top-row"> <img
+                        src="https://www.pngall.com/wp-content/uploads/5/Infinity-Symbol-PNG-Free-Image.png"
+                        width="130px" height="80px"> </div>
 
-            <form action="#" #userForm="ngForm">
-                <div class="form first">
-                    <div class="details personal">
-
-
-                        <div class="fields">
-                            <div class="input-field">
-                                <label>Nombres</label>
-                                <input type="text" name="nombre" placeholder="Ingrese su nombre"
-                                    [(ngModel)]="persona.nombres" required>
-                            </div>
-                            <div class="input-field">
-                                <label>Apellidos</label>
-                                <input type="text" name="apellido" placeholder="Ingrese su apellido"
-                                    [(ngModel)]="persona.apellidos" required>
-                            </div>
-                            <div class="input-field">
-                                <label>Numero de Cedula</label>
-                                <input type="text" name="cedula" placeholder="Ingrese su numero de cedula"
-                                    [(ngModel)]="usuario.username" required>
-                            </div>
-
-                            <div class="input-field">
-                                <label>Email</label>
-                                <input type="email" name="email" placeholder="Ingrese su correo institucional"
-                                    [(ngModel)]="persona.correo" required>
-                            </div>
-
-                            <div class="input-field">
-                                <label>Contraseña</label>
-                                <p-password [toggleMask]="true" id="input" placeholder="Ingrese una Contraseña"
-                                    class={{verfPassword}} [(ngModel)]="usuario.password" required></p-password>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="content"> <i class="fa fa-lock" aria-hidden="true"></i>
+                    <h1>Iniciar Sesion</h1>
+                    <h1>TechSoft</h1>
+                    <p>Correo Electronico O Cedula</p>
+                    <input type="text" class="text" name="" id="">
+                    <p>Contraseña</p>
+                    <input type="password" class="text" name="" id="">
+                    <a href="#" id="btns" class="btn btn-lg btn-secondary fw-bold border-white ">Iniciar
+                        Sesion</a>
                 </div>
-            </form>
+                <div class="networks background-top-row"> <i class="fa fa-facebook" aria-hidden="true"></i> <i
+                        class="fa fa-google" aria-hidden="true"></i> <i class="fa fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
 
 
+    </div>
 
+</body>
+
+<body>
+    <p-panel header="Registro Usuario">
 
         <div class="p-grid p-fluid">
             <div class="p-col-12 p-md-4">

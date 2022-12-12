@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path:'log',
     loadChildren:() => import("./auth/auth.module").then(m => m.AuthModule)
+  },
+  {
+    path:'reg-user',
+    loadChildren:() => import("./register-user/register-user.module").then(m => m.RegisterUserModule)
   }
 ];
 
