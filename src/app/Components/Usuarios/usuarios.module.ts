@@ -20,8 +20,6 @@ import { DialogModule } from 'primeng/dialog';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 
-
-
 @NgModule({
   declarations: [
     DashUsuarioComponent,

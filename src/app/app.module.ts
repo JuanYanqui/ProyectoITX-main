@@ -54,6 +54,7 @@ import * as pdfFonts from "pdfmake/build/vfs_fonts";
 import { ReportesComponent } from './Components/reportes/reportes.component';
 import { VentaClienteComponent } from './Components/venta-cliente/venta-cliente.component';
 import { InterceptorService } from './modules/services/interceptor/interceptor.service';
+import { InputMaskAngularModule } from 'input-mask-angular';
 PdfMakeWrapper.setFonts(pdfFonts);
 
 @NgModule({
@@ -112,6 +113,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
     InputNumberModule,
     TooltipModule,
     TabViewModule,
+    InputMaskAngularModule,
     RadioButtonModule
   ],
   providers: [
