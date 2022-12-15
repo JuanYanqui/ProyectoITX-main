@@ -22,6 +22,7 @@ import { ReportesComponent } from './Components/reportes/reportes.component';
 import { VentaClienteComponent } from './Components/venta-cliente/venta-cliente.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomeHomeComponent } from './Modules1/home/welcome-home/welcome-home.component';
+import { WelcomeClienteComponent } from './Modules1/cliente/welcome-cliente/welcome-cliente.component';
 
 const routes: Routes = [
   { path: 'add-public-prolife', component: FormPublicUserComponent },
@@ -123,6 +124,12 @@ const routes: Routes = [
   path: 'Homepage',
   component: WelcomeHomeComponent,
   loadChildren: () => import('./Modules1/home/home.module').then(m => m.HomeModule) // se importa un modulo que tiene routing es decir ruta 
+   
+},
+{
+  path: 'register-client',
+  component: WelcomeClienteComponent,
+  loadChildren: () => import('./Modules1/cliente/cliente.module').then(m => m.ClienteModule) // se importa un modulo que tiene routing es decir ruta 
    
 }
 
